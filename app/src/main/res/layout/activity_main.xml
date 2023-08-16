@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity"
+    >
+
+    <GridLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:columnCount="3"
+        android:rowCount="2"
+        android:id="@+id/grid_main"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_column="0"
+            android:layout_row="0"
+            android:layout_columnSpan="3"
+            android:id="@+id/layout_title"
+            android:orientation="horizontal"
+            android:gravity="left"
+            >
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/tp_kia_logo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Robot Control"
+                    android:textSize="30sp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="450dp"
+                    android:layout_alignParentLeft="true"
+                    android:textStyle="bold"/>
+
+                <Button
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:text="Exit"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="950dp"
+                    android:onClick="button_exit_program"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/button_style1"
+                    />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="380dp"
+            android:layout_rowWeight="2.5"
+            android:background="#87CEEB"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:id="@+id/layout_robot1"
+            android:orientation="vertical"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Robot 1"
+                android:textColor="@color/white"
+                android:textSize="25sp"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:id="@+id/robot1_title"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:id="@+id/robot1_layoutaddress"
+                android:layout_below="@+id/robot1_title"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address :"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="left|center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:background="@color/white"
+                    android:layout_marginLeft="110dp"
+                    android:padding="1dp"
+                    android:textColor="@color/black"
+                    android:text="192.168.40.249"
+                    android:textSize="20sp"
+                    android:inputType="textUri"
+                    android:maxLines="1"
+                    android:id="@+id/robot1_address"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:id="@+id/robot1_layoutconnect"
+                android:layout_below="@+id/robot1_layoutaddress"
+                >
+
+                <Button
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:text="Connect"
+                    android:textSize="25sp"
+                    android:onClick="button_robot1_connect"
+                    android:background="@drawable/button_style1"
+                    />
+
+                <Button
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:text="Disconnect"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="190dp"
+                    android:onClick="button_robot1_disconnect"
+                    android:background="@drawable/button_style1"
+                    />
+            </RelativeLayout>
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="#FFFFFFFF"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:id="@+id/robot1_line1"
+            android:layout_below="@+id/robot1_layoutconnect"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Program"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:id="@+id/robot1_program"
+            android:layout_below="@+id/robot1_line1"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="1dp"
+                android:orientation="horizontal"
+                android:id="@+id/robot1_layoutprogram"
+                android:layout_below="@+id/robot1_program">
+
+                <Spinner
+                    android:id="@+id/spinner_robot1"
+                    android:layout_width="170dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:layout_width="110dp"
+                    android:layout_height="30dp"
+                    android:background="@color/white"
+                    android:layout_marginLeft="180dp"
+                    android:padding="1dp"
+                    android:textColor="@color/black"
+                    android:text="program.urp"
+                    android:textSize="20sp"
+                    android:inputType="textUri"
+                    android:maxLines="1"
+                    android:id="@+id/robot1_editpname"
+                    />
+
+                <Button
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:text="SET"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="300dp"
+                    android:onClick="button_robot1_setpname"
+                    android:background="@drawable/button_style1"
+                    />
+                <!--
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1_1.urp"
+                android:textSize="20sp"
+                android:id="@+id/checkbox_robot1_1"
+                android:onClick="checkbox_click_robot1_1"
+                android:layout_marginLeft="10dp"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1_2.urp"
+                android:textSize="20sp"
+                android:id="@+id/checkbox_robot1_2"
+                android:onClick="checkbox_click_robot1_2"
+                />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1_3.urp"
+                android:textSize="20sp"
+                android:id="@+id/checkbox_robot1_3"
+                android:onClick="checkbox_click_robot1_3"
+                />
+            -->
+
+            </RelativeLayout>
+
+        <Button
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:text="Load program"
+            android:textSize="25sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="70dp"
+            android:onClick="button_robot1_loadprogram"
+            android:background="@drawable/button_style1"
+            android:id="@+id/button_robot1_load"
+            android:layout_below="@id/robot1_layoutprogram"
+            />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:background="#FFFFFFFF"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:id="@+id/robot1_line2"
+            android:layout_below="@id/button_robot1_load"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Command"
+            android:textSize="25sp"
+            android:textColor="@color/white"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="10dp"
+            android:textStyle="bold"
+            android:id="@+id/robot1_command"
+            android:layout_below="@id/robot1_line2"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_margin="5dp"
+            android:id="@+id/robot1_layoutcommand"
+            android:layout_below="@id/robot1_command"
+            >
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:text="Play"
+                android:textSize="25sp"
+                android:layout_marginLeft="5dp"
+                android:onClick="button_robot1_play"
+                android:background="@drawable/button_style1"
+                />
+
+            <Button
+                android:layout_width="140dp"
+                android:layout_height="100dp"
+                android:text="Pause"
+                android:textSize="25sp"
+                android:layout_marginLeft="110dp"
+                android:onClick="button_robot1_pause"
+                android:background="@drawable/button_style1"
+                />
+
+            <Button
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:text="Stop"
+                android:textSize="25sp"
+                android:layout_marginLeft="255dp"
+                android:onClick="button_robot1_stop"
+                android:background="@drawable/button_style1"
+                />
+
+        </RelativeLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:background="#FFFFFFFF"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/robot1_line3"
+                android:layout_below="@id/robot1_layoutcommand"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:id="@+id/robot1_text_message"
+                android:layout_below="@id/robot1_line3"/>
+                />
+
+            <EditText
+                android:layout_width="360dp"
+                android:layout_height="100dp"
+                android:background="@color/white"
+                android:layout_marginLeft="10dp"
+                android:padding="1dp"
+                android:textColor="@color/black"
+                android:text=""
+                android:textSize="15sp"
+                android:inputType="textMultiLine"
+                android:enabled="false"
+                android:gravity="start"
+                android:scrollbars = "vertical"
+                android:id="@+id/robot1_message"
+                android:layout_below="@id/robot1_text_message"
+                />
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:text="Clear message"
+                android:textSize="25sp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="5dp"
+                android:onClick="button_robot1_messageclear"
+                android:background="@drawable/button_style1"
+                android:layout_below="@id/robot1_message"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="380dp"
+            android:layout_rowWeight="2.5"
+            android:background="#87CEEB"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:id="@+id/layout_robot2"
+            android:orientation="vertical"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Robot 2"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:id="@+id/robot2_title"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:id="@+id/robot2_layoutaddress"
+                android:layout_below="@+id/robot2_title"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address :"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="left|center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:background="@color/white"
+                    android:layout_marginLeft="110dp"
+                    android:padding="1dp"
+                    android:textColor="@color/black"
+                    android:text="192.168.40.249"
+                    android:textSize="20sp"
+                    android:inputType="textUri"
+                    android:maxLines="1"
+                    android:id="@+id/robot2_address"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:id="@+id/robot2_layoutconnect"
+                android:layout_below="@+id/robot2_layoutaddress"
+                >
+
+                <Button
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:text="Connect"
+                    android:textSize="25sp"
+                    android:onClick="button_robot2_connect"
+                    android:background="@drawable/button_style1"
+                    />
+
+                <Button
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:text="Disconnect"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="190dp"
+                    android:onClick="button_robot2_disconnect"
+                    android:background="@drawable/button_style1"
+                    />
+            </RelativeLayout>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:background="#FFFFFFFF"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/robot2_line1"
+                android:layout_below="@+id/robot2_layoutconnect"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Program"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:id="@+id/robot2_program"
+                android:layout_below="@+id/robot2_line1"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="1dp"
+                android:id="@+id/robot2_layoutprogram"
+                android:layout_below="@+id/robot2_program"
+                >
+
+                <Spinner
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:id="@+id/spinner_robot2"
+                    android:layout_marginLeft="10dp"
+                    />
+
+                <EditText
+                    android:layout_width="110dp"
+                    android:layout_height="30dp"
+                    android:background="@color/white"
+                    android:layout_marginLeft="180dp"
+                    android:padding="1dp"
+                    android:textColor="@color/black"
+                    android:text="program.urp"
+                    android:textSize="20sp"
+                    android:inputType="textUri"
+                    android:maxLines="1"
+                    android:id="@+id/robot2_editpname"
+                    />
+
+                <Button
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:text="SET"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="300dp"
+                    android:onClick="button_robot2_setpname"
+                    android:background="@drawable/button_style1"
+                    />
+                <!--
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2_1.urp"
+                    android:textSize="20sp"
+                    android:id="@+id/checkbox_robot2_1"
+                    android:onClick="checkbox_click_robot2_1"
+                    android:layout_marginLeft="10dp"
+                    />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2_2.urp"
+                    android:textSize="20sp"
+                    android:id="@+id/checkbox_robot2_2"
+                    android:onClick="checkbox_click_robot2_2"
+                    />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2_3.urp"
+                    android:textSize="20sp"
+                    android:id="@+id/checkbox_robot2_3"
+                    android:onClick="checkbox_click_robot2_3"
+                    />
+                -->
+
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:text="Load program"
+                android:textSize="25sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="70dp"
+                android:onClick="button_robot2_loadprogram"
+                android:background="@drawable/button_style1"
+                android:id="@+id/button_robot2_load"
+                android:layout_below="@id/robot2_layoutprogram"
+                />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:background="#FFFFFFFF"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/robot2_line2"
+                android:layout_below="@id/button_robot2_load"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Command"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/robot2_command"
+                android:layout_below="@id/robot2_line2"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:id="@+id/robot2_layoutcommand"
+                android:layout_below="@id/robot2_command"
+                >
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="Play"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="5dp"
+                    android:onClick="button_robot2_play"
+                    android:background="@drawable/button_style1"
+                    />
+
+                <Button
+                    android:layout_width="140dp"
+                    android:layout_height="100dp"
+                    android:text="Pause"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="110dp"
+                    android:onClick="button_robot2_pause"
+                    android:background="@drawable/button_style1"
+                    />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="Stop"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="255dp"
+                    android:onClick="button_robot2_stop"
+                    android:background="@drawable/button_style1"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:background="#FFFFFFFF"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/robot2_line3"
+                android:layout_below="@id/robot2_layoutcommand"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:id="@+id/robot2_text_message"
+                android:layout_below="@id/robot2_line3"/>
+
+            <EditText
+                android:layout_width="360dp"
+                android:layout_height="100dp"
+                android:background="@color/white"
+                android:layout_marginLeft="10dp"
+                android:padding="1dp"
+                android:textColor="@color/black"
+                android:text=""
+                android:textSize="15sp"
+                android:inputType="textMultiLine"
+                android:enabled="false"
+                android:gravity="start"
+                android:scrollbars = "vertical"
+                android:id="@+id/robot2_message"
+                android:layout_below="@id/robot2_text_message"
+                />
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:text="Clear message"
+                android:textSize="25sp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="5dp"
+                android:onClick="button_robot2_messageclear"
+                android:background="@drawable/button_style1"
+                android:layout_below="@id/robot2_message"
+                />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="380dp"
+            android:layout_rowWeight="2.5"
+            android:background="#87CEEB"
+            android:layout_column="2"
+            android:layout_row="1"
+            android:id="@+id/layout_robot3"
+            android:orientation="vertical"
+            android:layout_margin="1dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Robot 3"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:id="@+id/robot3_title"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:id="@+id/robot3_layoutaddress"
+                android:layout_below="@+id/robot3_title"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Address :"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:gravity="left|center_horizontal"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="bold"/>
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="30dp"
+                    android:background="@color/white"
+                    android:layout_marginLeft="110dp"
+                    android:padding="1dp"
+                    android:textColor="@color/black"
+                    android:text="192.168.40.249"
+                    android:textSize="20sp"
+                    android:inputType="textUri"
+                    android:maxLines="1"
+                    android:id="@+id/robot3_address"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:id="@+id/robot3_layoutconnect"
+                android:layout_below="@+id/robot3_layoutaddress"
+                >
+
+                <Button
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:text="Connect"
+                    android:textSize="25sp"
+                    android:onClick="button_robot3_connect"
+                    android:background="@drawable/button_style1"
+                    />
+
+                <Button
+                    android:layout_width="180dp"
+                    android:layout_height="50dp"
+                    android:text="Disconnect"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="190dp"
+                    android:onClick="button_robot3_disconnect"
+                    android:background="@drawable/button_style1"
+                    />
+            </RelativeLayout>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:background="#FFFFFFFF"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/robot3_line1"
+                android:layout_below="@+id/robot3_layoutconnect"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Program"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:id="@+id/robot3_program"
+                android:layout_below="@+id/robot3_line1"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="1dp"
+                android:id="@+id/robot3_layoutprogram"
+                android:layout_below="@+id/robot3_program"
+                >
+
+                <Spinner
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:id="@+id/spinner_robot3"
+                    android:layout_marginLeft="10dp"
+                    />
+
+                <EditText
+                    android:layout_width="110dp"
+                    android:layout_height="30dp"
+                    android:background="@color/white"
+                    android:layout_marginLeft="180dp"
+                    android:padding="1dp"
+                    android:textColor="@color/black"
+                    android:text="program.urp"
+                    android:textSize="20sp"
+                    android:inputType="textUri"
+                    android:maxLines="1"
+                    android:id="@+id/robot3_editpname"
+                    />
+
+                <Button
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:text="SET"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="300dp"
+                    android:onClick="button_robot3_setpname"
+                    android:background="@drawable/button_style1"
+                    />
+                <!--
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3_1.urp"
+                    android:textSize="20sp"
+                    android:id="@+id/checkbox_robot3_1"
+                    android:onClick="checkbox_click_robot3_1"
+                    android:layout_marginLeft="10dp"
+                    />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3_2.urp"
+                    android:textSize="20sp"
+                    android:id="@+id/checkbox_robot3_2"
+                    android:onClick="checkbox_click_robot3_2"
+                    />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3_3.urp"
+                    android:textSize="20sp"
+                    android:id="@+id/checkbox_robot3_3"
+                    android:onClick="checkbox_click_robot3_3"
+                    />
+                -->
+
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:text="Load program"
+                android:textSize="25sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="70dp"
+                android:onClick="button_robot3_loadprogram"
+                android:background="@drawable/button_style1"
+                android:id="@+id/button_robot3_load"
+                android:layout_below="@id/robot3_layoutprogram"
+                />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:background="#FFFFFFFF"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/robot3_line2"
+                android:layout_below="@id/button_robot3_load"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Command"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"
+                android:id="@+id/robot3_command"
+                android:layout_below="@id/robot3_line2"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:id="@+id/robot3_layoutcommand"
+                android:layout_below="@id/robot3_command"
+                >
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="Play"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="5dp"
+                    android:onClick="button_robot3_play"
+                    android:background="@drawable/button_style1"
+                    />
+
+                <Button
+                    android:layout_width="140dp"
+                    android:layout_height="100dp"
+                    android:text="Pause"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="110dp"
+                    android:onClick="button_robot3_pause"
+                    android:background="@drawable/button_style1"
+                    />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="Stop"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="255dp"
+                    android:onClick="button_robot3_stop"
+                    android:background="@drawable/button_style1"
+                    />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:background="#FFFFFFFF"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:id="@+id/robot3_line3"
+                android:layout_below="@id/robot3_layoutcommand"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Message"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:layout_marginLeft="10dp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:id="@+id/robot3_text_message"
+                android:layout_below="@id/robot3_line3"/>
+
+            <EditText
+                android:layout_width="360dp"
+                android:layout_height="100dp"
+                android:background="@color/white"
+                android:layout_marginLeft="10dp"
+                android:padding="1dp"
+                android:textColor="@color/black"
+                android:text=""
+                android:textSize="15sp"
+                android:inputType="textMultiLine"
+                android:enabled="false"
+                android:gravity="start"
+                android:scrollbars = "vertical"
+                android:id="@+id/robot3_message"
+                android:layout_below="@id/robot3_text_message"
+                />
+
+            <Button
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:text="Clear message"
+                android:textSize="25sp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="5dp"
+                android:onClick="button_robot3_messageclear"
+                android:background="@drawable/button_style1"
+                android:layout_below="@id/robot3_message"
+                />
+
+        </RelativeLayout>
+
+
+
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
