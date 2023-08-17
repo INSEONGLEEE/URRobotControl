@@ -248,7 +248,7 @@
             android:layout_marginLeft="70dp"
             android:onClick="button_robot1_loadprogram"
             android:background="@drawable/button_style1"
-            android:id="@+id/button_robot1_load"
+            android:id="@+id/btnRobot1Load"
             android:layout_below="@id/robot1_layoutprogram"
             />
 
@@ -259,7 +259,7 @@
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
             android:id="@+id/robot1_line2"
-            android:layout_below="@id/button_robot1_load"
+            android:layout_below="@id/btnRobot1Load"
             />
 
         <TextView
@@ -286,7 +286,7 @@
                 android:layout_marginBottom="5dp"
                 android:orientation="horizontal">
 
-                <androidx.appcompat.widget.AppCompatButton
+                <Button
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginLeft="5dp"
@@ -555,7 +555,7 @@
                 android:layout_marginLeft="70dp"
                 android:onClick="button_robot2_loadprogram"
                 android:background="@drawable/button_style1"
-                android:id="@+id/button_robot2_load"
+                android:id="@+id/btnRobot2Load"
                 android:layout_below="@id/robot2_layoutprogram"
                 />
 
@@ -566,7 +566,7 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
                 android:id="@+id/robot2_line2"
-                android:layout_below="@id/button_robot2_load"/>
+                android:layout_below="@id/btnRobot2Load"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -861,7 +861,7 @@
                 android:layout_marginLeft="70dp"
                 android:onClick="button_robot3_loadprogram"
                 android:background="@drawable/button_style1"
-                android:id="@+id/button_robot3_load"
+                android:id="@+id/btnRobot3Load"
                 android:layout_below="@id/robot3_layoutprogram"
                 />
 
@@ -872,7 +872,7 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
                 android:id="@+id/robot3_line2"
-                android:layout_below="@id/button_robot3_load"/>
+                android:layout_below="@id/btnRobot3Load"/>
 
             <TextView
                 android:layout_width="wrap_content"

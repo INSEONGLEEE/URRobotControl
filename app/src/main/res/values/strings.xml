@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">URRobotControl</string>
+
+    <string name="common_confirm">확인</string>
+    <string name="common_cancel">취소</string>
+    <string name="common_yes">예</string>
+    <string name="common_no">아니오</string>
+    <string name="common_save">저장</string>
+    <string name="common_finish">완료</string>
+    <string name="common_upload">첨부</string>
+    <string name="common_next">다음</string>
+    <string name="common_search">찾기</string>
+    <string name="common_close">닫기</string>
 </resources>
